@@ -24,9 +24,27 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Shoot",
+                    "name": "FrontShoot",
                     "type": "Button",
-                    "id": "a3f3703c-8eee-46d6-b411-c7fa04015f4d",
+                    "id": "f351ef78-2b20-4988-996a-334a46634666",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftSideShoot",
+                    "type": "Button",
+                    "id": "cb13a0c6-ada5-4c12-b4fc-a7492d81bb80",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightSideShoot",
+                    "type": "Button",
+                    "id": "09f0f9f0-648a-453e-ab46-81601abbe113",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -57,18 +75,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "up",
-                    "id": "278ee73d-1000-4dc5-b56a-eb4bba1166a5",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Keyboard",
+                    "name": "Gamepad",
                     "id": "416f6aa7-173b-49bd-9de4-142eacb1be71",
                     "path": "2DVector",
                     "interactions": "",
@@ -112,31 +119,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "657a5ff0-ca3a-4773-a00b-3a6d30fae177",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "right",
                     "id": "3cb04d70-9d3c-4e5b-8ec9-d75d4994063b",
                     "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "22b6f922-f1fd-4afe-94dd-b3682f6a52c5",
-                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -201,23 +186,34 @@
                 },
                 {
                     "name": "",
-                    "id": "3c57a02c-f4c0-4038-bfed-6a7352ef9df9",
-                    "path": "<Keyboard>/z",
+                    "id": "284f6a4f-fb72-4460-8914-b6e4588a0edd",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "FrontShoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "20551c03-1862-4863-a157-c842c20bf543",
-                    "path": "<Keyboard>/x",
+                    "id": "6746c627-293b-42d0-8d0f-ef5453b30192",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "LeftSideShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6bed612-3215-489b-ba36-463f2685ecce",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightSideShoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
