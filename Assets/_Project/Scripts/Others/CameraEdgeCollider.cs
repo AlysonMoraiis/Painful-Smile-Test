@@ -8,8 +8,6 @@ public class CameraEdgeCollider : MonoBehaviour
     [FormerlySerializedAs("cam")] [SerializeField]
     private Camera _camera;
 
-    [SerializeField] private BoxCollider2D _boxCollider;
-
     private float _sizeX, _sizeY, _ratio;
 
     void Start()
