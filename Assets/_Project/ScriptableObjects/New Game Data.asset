@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e23faef96963545817b4a4a5a7c6d7, type: 3}
   m_Name: New Game Data
   m_EditorClassIdentifier: 
-  SessionTime: 3
+  SessionTime: 8
   EnemySpawnTime: 2
+  Points: 30
