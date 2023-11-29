@@ -47,10 +47,12 @@ public class PlayerCannon : MonoBehaviour
     {
         if (Time.time > _nextFire)
         {
-            GameObject bullet = Instantiate(_cannonBulletPrefab, cannonPoint.position, _playerTransform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * _fireForce, ForceMode2D.Impulse);
-
-
+            //GameObject bullet = Instantiate(_cannonBulletPrefab, cannonPoint.position, _playerTransform.rotation);
+            GameObject bullet = PoolManager.Instance.SpawnFromPool("Bullet", cannonPoint.position, _playerTransform.rotation);
+            Rigidbody2D rigidbody2D = bullet.GetComponent<Rigidbody2D>();
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.AddForce(bullet.transform.up * _fireForce, ForceMode2D.Impulse);
+            
             FireCooldown();
         }
     }
@@ -61,9 +63,11 @@ public class PlayerCannon : MonoBehaviour
         {
             foreach (var firePoint in firePoints)
             {
-                GameObject bullet = Instantiate(_cannonBulletPrefab, firePoint.position,
-                    Quaternion.Euler(0, 0, _playerTransform.rotation.eulerAngles.z + angle));
-                bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * _fireForce, ForceMode2D.Impulse);
+                GameObject bullet = PoolManager.Instance.SpawnFromPool("Bullet", firePoint.position, Quaternion.Euler(0, 0, _playerTransform.rotation.eulerAngles.z + angle));
+
+                Rigidbody2D rigidbody2D = bullet.GetComponent<Rigidbody2D>();
+                rigidbody2D.velocity = Vector2.zero;
+                rigidbody2D.AddForce(bullet.transform.up * _fireForce, ForceMode2D.Impulse);
             }
 
             FireCooldown();

@@ -3,31 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPooledObject
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rigidbody;
 
-    private void Awake()
+    public void OnObjectSpawn()
     {
-        Invoke("OnBulletExplosion", 10f);
+        ////////////////////////////////////////////////_animator.Rebind();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
-            OnBulletExplosion();
+            DesactiveGameObject();
             return;
         }
-        
-        _animator.SetTrigger("Explosion");
-        _rigidbody.bodyType = RigidbodyType2D.Static;
+
+        OnBulletExplosion();
     }
 
     public void OnBulletExplosion()
     {
-        //colocar object pooling      ///////////////////////////////////////////////////////
-        Destroy(gameObject);
+        PoolManager.Instance.SpawnFromPool("ExplosionEffect", transform.position, transform.rotation);
+        DesactiveGameObject();
+    }
+
+    private void DesactiveGameObject()
+    {
+        gameObject.SetActive(false);
     }
 }
