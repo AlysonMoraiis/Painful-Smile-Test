@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - ChaserEnemy
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Player
   - Bullet
   - CameraEdge
-  - 
+  - ChaserEnemy
   - 
   - 
   - 

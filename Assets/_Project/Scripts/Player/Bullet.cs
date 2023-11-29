@@ -3,21 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour, IPooledObject
+public class Bullet : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rigidbody;
-
-    public void OnObjectSpawn()
-    {
-        ////////////////////////////////////////////////_animator.Rebind();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
-            DesactiveGameObject();
+            DisableGameObject();
             return;
         }
 
@@ -27,10 +22,10 @@ public class Bullet : MonoBehaviour, IPooledObject
     public void OnBulletExplosion()
     {
         PoolManager.Instance.SpawnFromPool("ExplosionEffect", transform.position, transform.rotation);
-        DesactiveGameObject();
+        DisableGameObject();
     }
 
-    private void DesactiveGameObject()
+    private void DisableGameObject()
     {
         gameObject.SetActive(false);
     }

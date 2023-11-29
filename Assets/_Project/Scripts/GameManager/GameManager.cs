@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameData _gameData;
     [SerializeField] private GameSessionManager _gameSessionManager;
     [SerializeField] private GameObject _gameOverScreen;
+    [SerializeField] private PlayerHealth _playerHealth;
 
     private void Awake()
     {
@@ -19,11 +20,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         _gameSessionManager.OnTimeOut += EndOfSession;
+        _playerHealth.OnDestroyShip += EndOfSession;
     }
 
     private void OnDisable()
     {
         _gameSessionManager.OnTimeOut -= EndOfSession;
+        _playerHealth.OnDestroyShip -= EndOfSession;
     }
 
     private void IncreasesScore()

@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerCannon : MonoBehaviour
 {
-    [Header("Alterables")]
+    [Header("Alterables")] 
+    [SerializeField] private int _playerDamage = 1;
     [SerializeField] private float _fireForce = 20f;
     [SerializeField] private float _fireRate = 1f;
     [Header("Transforms")]
@@ -14,10 +13,15 @@ public class PlayerCannon : MonoBehaviour
     [SerializeField] private Transform _frontCannon;
     [SerializeField] private Transform[] _leftSideFirePoints;
     [SerializeField] private Transform[] _rightSideFirePoints;
-    [Header("Others")]
-    [SerializeField] private GameObject _cannonBulletPrefab;
-
+    [Header("Others")] 
+    [SerializeField] private GameData _gameData;
+    
     private float _nextFire;
+
+    private void Start()
+    {
+        _gameData.PlayerDamage = _playerDamage;
+    }
 
     public void HandleFrontShootButton(InputAction.CallbackContext context)
     {
@@ -47,7 +51,6 @@ public class PlayerCannon : MonoBehaviour
     {
         if (Time.time > _nextFire)
         {
-            //GameObject bullet = Instantiate(_cannonBulletPrefab, cannonPoint.position, _playerTransform.rotation);
             GameObject bullet = PoolManager.Instance.SpawnFromPool("Bullet", cannonPoint.position, _playerTransform.rotation);
             Rigidbody2D rigidbody2D = bullet.GetComponent<Rigidbody2D>();
             rigidbody2D.velocity = Vector2.zero;

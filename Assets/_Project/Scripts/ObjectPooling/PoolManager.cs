@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    public Dictionary<string, Queue<GameObject>> _poolDictionary;
-    public List<Pool> pools;
+    [SerializeField] private Dictionary<string, Queue<GameObject>> _poolDictionary;
+    [SerializeField] private List<Pool> pools;
 
     public static PoolManager Instance;
 
@@ -53,13 +53,6 @@ public class PoolManager : MonoBehaviour
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 
-        IPooledObject pooledObject =  objectToSpawn.GetComponent<IPooledObject>();
-
-        if (pooledObject != null)
-        {
-            pooledObject.OnObjectSpawn();
-        }
-        
         _poolDictionary[tag].Enqueue((objectToSpawn));
 
         return objectToSpawn;
