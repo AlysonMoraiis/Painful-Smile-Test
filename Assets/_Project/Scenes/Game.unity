@@ -123,6 +123,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &26084525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26084528}
+  - component: {fileID: 26084527}
+  - component: {fileID: 26084526}
+  m_Layer: 0
+  m_Name: Navmesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &26084526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26084525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+--- !u!114 &26084527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26084525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 23800000, guid: ab7e636004f29f94eae578fe85c91e0c, type: 2}
+--- !u!4 &26084528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26084525}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &48084814
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,63 +233,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1740500250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &93116679
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 304719722351135630, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_Name
-      value: ChaserEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.1249754
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.0510824
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986988096948762213, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
 --- !u!1 &142418274
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +808,7 @@ GameObject:
   - component: {fileID: 628493561}
   - component: {fileID: 628493560}
   - component: {fileID: 628493559}
+  - component: {fileID: 628493562}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -1415,6 +1438,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &628493562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628493555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &676807135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,6 +2386,7 @@ GameObject:
   - component: {fileID: 1673015228}
   - component: {fileID: 1673015230}
   - component: {fileID: 1673015229}
+  - component: {fileID: 1673015231}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -9960,6 +10000,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1673015231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673015227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1740500249
 GameObject:
   m_ObjectHideFlags: 0
@@ -10617,7 +10673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b283c99111f18b84f8801994f08019a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 10
+  _maxHealth: 20
   _shipSpriteRenderer: {fileID: 1889228563}
   _stateSprite:
   - {fileID: 21300000, guid: abdbbe2d46e6af3418ad7eda7203f652, type: 3}
@@ -10937,4 +10993,4 @@ SceneRoots:
   - {fileID: 1380699800}
   - {fileID: 142418277}
   - {fileID: 1818913934}
-  - {fileID: 93116679}
+  - {fileID: 26084528}

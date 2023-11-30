@@ -31,18 +31,20 @@ public class HealthController : MonoBehaviour
     protected void TakeDamage(int value)
     {
         _health -= value;
-        
+    
+        float healthPercentage = (float)_health / _maxHealth * 100;
+    
         UpdateHealthBar();
         if (_health <= 0)
         {
             _health = 0;
             DestroyShip();
         }
-        else if (_health <= 4)
+        else if (healthPercentage <= 40) // 40% de saúde
         {
             SetShipState(2);
         }
-        else if (_health <= 7)
+        else if (healthPercentage <= 70) // 70% de saúde
         {
             SetShipState(1);
         }
