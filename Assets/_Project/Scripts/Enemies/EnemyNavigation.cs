@@ -7,11 +7,10 @@ using UnityEngine.AI;
 public class EnemyNavigation : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
-
-    [SerializeField] private float _rotationSpeed = 1f;
+    [SerializeField] private EnemyData _enemyData;
 
     private GameObject _playerTarget;
-    
+
     private void Start()
     {
         _agent.updateRotation = false;
@@ -36,6 +35,6 @@ public class EnemyNavigation : MonoBehaviour
         Vector3 direction = agentDestination - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _enemyData.RotationSpeed * Time.deltaTime);
     }
 }

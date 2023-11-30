@@ -11,18 +11,23 @@ public class PlayerHealth : HealthController
     {
         if (other.gameObject.CompareTag("ChaserEnemy"))
         {
-            TakeDamage(_gameData.ChaserDamage);
+            TakeDamage(_enemyData.ChaserDamage);
         }
 
-        if (other.gameObject.CompareTag("Enemy"))
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
         {
-            TakeDamage(_gameData.ChaserDamage);
+            TakeDamage(_enemyData.ShooterDamage);
         }
     }
 
     protected override void DestroyShip()
     {
-        PoolManager.Instance.SpawnFromPool("ExplosionEffect", transform.position, transform.rotation);
+        base.DestroyShip();
         OnDestroyShip?.Invoke();
     }
 }

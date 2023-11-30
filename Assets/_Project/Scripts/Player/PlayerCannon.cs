@@ -15,6 +15,8 @@ public class PlayerCannon : MonoBehaviour
     [SerializeField] private Transform[] _rightSideFirePoints;
     [Header("Others")] 
     [SerializeField] private GameData _gameData;
+
+    [SerializeField] private PoolData _bulletPool;
     
     private float _nextFire;
 
@@ -27,7 +29,7 @@ public class PlayerCannon : MonoBehaviour
     {
         if (context.performed)
         {
-            FrontFire(_frontCannon);
+            FrontShoot(_frontCannon);
         }
     }
 
@@ -35,7 +37,7 @@ public class PlayerCannon : MonoBehaviour
     {
         if (context.performed)
         {
-            SidesFire(_leftSideFirePoints, 90);
+            SidesShoot(_leftSideFirePoints, 90);
         }
     }
     
@@ -43,41 +45,41 @@ public class PlayerCannon : MonoBehaviour
     {
         if (context.performed)
         {
-            SidesFire(_rightSideFirePoints, -90);
+            SidesShoot(_rightSideFirePoints, -90);
         }
     }
 
-    private void FrontFire(Transform cannonPoint)
+    private void FrontShoot(Transform cannonPoint)
     {
         if (Time.time > _nextFire)
         {
-            GameObject bullet = PoolManager.Instance.SpawnFromPool("Bullet", cannonPoint.position, _playerTransform.rotation);
+            GameObject bullet = PoolManager.Instance.SpawnFromPool(_bulletPool.Tag, cannonPoint.position, _playerTransform.rotation);
             Rigidbody2D rigidbody2D = bullet.GetComponent<Rigidbody2D>();
             rigidbody2D.velocity = Vector2.zero;
             rigidbody2D.AddForce(bullet.transform.up * _fireForce, ForceMode2D.Impulse);
             
-            FireCooldown();
+            ShootCooldown();
         }
     }
 
-    private void SidesFire(Transform[] firePoints, int angle)
+    private void SidesShoot(Transform[] firePoints, int angle)
     {
         if (Time.time > _nextFire)
         {
             foreach (var firePoint in firePoints)
             {
-                GameObject bullet = PoolManager.Instance.SpawnFromPool("Bullet", firePoint.position, Quaternion.Euler(0, 0, _playerTransform.rotation.eulerAngles.z + angle));
+                GameObject bullet = PoolManager.Instance.SpawnFromPool(_bulletPool.Tag, firePoint.position, Quaternion.Euler(0, 0, _playerTransform.rotation.eulerAngles.z + angle));
 
                 Rigidbody2D rigidbody2D = bullet.GetComponent<Rigidbody2D>();
                 rigidbody2D.velocity = Vector2.zero;
                 rigidbody2D.AddForce(bullet.transform.up * _fireForce, ForceMode2D.Impulse);
             }
 
-            FireCooldown();
+            ShootCooldown();
         }
     }
 
-    private void FireCooldown()
+    private void ShootCooldown()
     {
         _nextFire = Time.time + _fireRate;
     }

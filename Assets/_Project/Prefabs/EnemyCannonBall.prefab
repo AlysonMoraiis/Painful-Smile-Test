@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8976846416352704063}
   - component: {fileID: 6447596438794792069}
-  - component: {fileID: -3195628468088182305}
+  - component: {fileID: 4964859766001939090}
   - component: {fileID: -2745961956116530015}
   - component: {fileID: 1725238803001782921}
   - component: {fileID: 7910565709923501288}
-  m_Layer: 8
-  m_Name: CannonBall
-  m_TagString: Bullet
+  m_Layer: 11
+  m_Name: EnemyCannonBall
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6269829837680419062}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &6447596438794792069
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3195628468088182305
+--- !u!114 &4964859766001939090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,11 +97,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6269829837680419062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a91a7e221d43bac429b5a53397e9d3c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 60f9babac02f13642a725de5b5c56546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 7910565709923501288}
-  _rigidbody: {fileID: -2745961956116530015}
   _explosionEffect: {fileID: 11400000, guid: 33884cdd95b667041963cdcdb21e05e4, type: 2}
 --- !u!50 &-2745961956116530015
 Rigidbody2D:
@@ -159,7 +157,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

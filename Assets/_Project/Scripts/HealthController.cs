@@ -18,7 +18,8 @@ public class HealthController : MonoBehaviour
 
     [Header("Others")] 
     [SerializeField] protected GameData _gameData;
-    [SerializeField] protected PoolData _poolData;
+    [SerializeField] protected PoolData _explosionEffect;
+    [SerializeField] protected EnemyData _enemyData;
 
 
     private void OnEnable()
@@ -26,6 +27,11 @@ public class HealthController : MonoBehaviour
         _health = _maxHealth;
         SetShipState(0);
         UpdateHealthBar();
+    }
+    
+    private void Update()
+    {
+        _healthCanvas.transform.rotation = Quaternion.identity;
     }
     
     protected void TakeDamage(int value)
@@ -40,11 +46,11 @@ public class HealthController : MonoBehaviour
             _health = 0;
             DestroyShip();
         }
-        else if (healthPercentage <= 40) // 40% de saúde
+        else if (healthPercentage <= 40)
         {
             SetShipState(2);
         }
-        else if (healthPercentage <= 70) // 70% de saúde
+        else if (healthPercentage <= 70)
         {
             SetShipState(1);
         }
@@ -62,12 +68,7 @@ public class HealthController : MonoBehaviour
     
     protected virtual void DestroyShip()
     {
-        PoolManager.Instance.SpawnFromPool(_poolData.Tag, transform.position, transform.rotation);
+        PoolManager.Instance.SpawnFromPool(_explosionEffect.Tag, transform.position, transform.rotation);
         gameObject.SetActive(false);
-    }
-    
-    private void Update()
-    {
-        _healthCanvas.transform.rotation = Quaternion.identity;
     }
 }

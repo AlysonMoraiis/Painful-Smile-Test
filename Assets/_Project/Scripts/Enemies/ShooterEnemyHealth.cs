@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaserEnemyHealth : HealthController
+public class ShooterEnemyHealth : HealthController
 {
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -8,14 +10,8 @@ public class ChaserEnemyHealth : HealthController
         {
             TakeDamage(_gameData.PlayerDamage);
         }
-
-        if (other.gameObject.CompareTag("Player"))
-        {
-            PoolManager.Instance.SpawnFromPool(_explosionEffect.Tag, transform.position, transform.rotation);
-            gameObject.SetActive(false);
-        }
     }
-
+    
     protected override void DestroyShip()
     {
         base.DestroyShip();

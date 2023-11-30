@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float _maxHealth;
-    [SerializeField] protected float _movementSpeed;
-    [SerializeField] protected float _rotationSpeed;
-    [SerializeField] protected float _fireForce;
-    [SerializeField] protected float _fireRate;
+    [SerializeField] private EnemyData _enemyData;
+    [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _rotationSpeed;
+    
+    private void Start()
+    {
+        _agent.speed = _movementSpeed;
+        _enemyData.RotationSpeed = _rotationSpeed;
+    }
+
 }

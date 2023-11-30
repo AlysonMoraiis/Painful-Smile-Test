@@ -137,11 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fdca8bbf9c2a6478da402722a9a2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 0
-  _movementSpeed: 0
-  _rotationSpeed: 0
-  _fireForce: 0
-  _fireRate: 0
+  _enemyData: {fileID: 11400000, guid: a46fcae60a267eb4c8f87d13dd31caa9, type: 2}
+  _agent: {fileID: 7224758172501177507}
+  _movementSpeed: 1.3
+  _rotationSpeed: 2.5
 --- !u!114 &4621104385227879512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28df97fc040b2947bffdf784484be90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 10
+  _maxHealth: 6
   _shipSpriteRenderer: {fileID: 1519423450565168205}
   _stateSprite:
   - {fileID: 21300000, guid: 21afd4ace18ae8646b386a5347f08679, type: 3}
@@ -164,7 +163,8 @@ MonoBehaviour:
   _healthCanvas: {fileID: 8802558203800644830}
   _healthBar: {fileID: 3681592261764532095}
   _gameData: {fileID: 11400000, guid: ad8c0cc1c926a354295c43c6f4515677, type: 2}
-  _poolData: {fileID: 11400000, guid: 33884cdd95b667041963cdcdb21e05e4, type: 2}
+  _explosionEffect: {fileID: 11400000, guid: 33884cdd95b667041963cdcdb21e05e4, type: 2}
+  _enemyData: {fileID: 11400000, guid: a46fcae60a267eb4c8f87d13dd31caa9, type: 2}
 --- !u!114 &2147481883557372294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,9 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20566e9eaaf91984db3681a97213c66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTarget: {fileID: 0}
   _agent: {fileID: 7224758172501177507}
-  _rotationSpeed: 2.5
+  _enemyData: {fileID: 11400000, guid: a46fcae60a267eb4c8f87d13dd31caa9, type: 2}
 --- !u!195 &7224758172501177507
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -365,7 +364,7 @@ GameObject:
   - component: {fileID: 2438627559026118943}
   - component: {fileID: 3982425963906843896}
   m_Layer: 5
-  m_Name: HealthCannvas
+  m_Name: HealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

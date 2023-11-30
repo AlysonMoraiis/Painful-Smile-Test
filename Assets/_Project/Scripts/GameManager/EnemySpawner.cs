@@ -7,7 +7,8 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
     [SerializeField] private Camera _camera;
-    [SerializeField] private PoolData _poolData;
+    [SerializeField] private PoolData _chaserEnemyData;
+    [SerializeField] private PoolData _shooterEnemyData;
 
     private bool _canSpawn = true;
 
@@ -22,18 +23,21 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnTime);
             SpawnChaserEnemy();
+            yield return new WaitForSeconds(spawnTime);
+            SpawnShooterEnemy();
         }
     }
     
     private void SpawnChaserEnemy()
     {
         Vector3 localToSpawn = GetRandomCornerPosition();   
-        PoolManager.Instance.SpawnFromPool(_poolData.Tag, localToSpawn, Quaternion.identity);
+        PoolManager.Instance.SpawnFromPool(_chaserEnemyData.Tag, localToSpawn, Quaternion.identity);
     }
     
     private void SpawnShooterEnemy()
     {
-        
+        Vector3 localToSpawn = GetRandomCornerPosition();   
+        PoolManager.Instance.SpawnFromPool(_shooterEnemyData.Tag, localToSpawn, Quaternion.identity);
     }
     
     private Vector3 GetRandomCornerPosition()

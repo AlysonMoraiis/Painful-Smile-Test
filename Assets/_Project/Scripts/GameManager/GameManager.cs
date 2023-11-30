@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         SetTimeScale(1);
+        ResetPoints();
     }
 
     private void OnEnable()
@@ -29,9 +30,18 @@ public class GameManager : MonoBehaviour
         _playerHealth.OnDestroyShip -= EndOfSession;
     }
 
-    private void IncreasesScore()
+    private void ResetPoints()
     {
-        _gameData.Points += 1;
+        if (_gameData.Points > _gameData.Highscore)
+        {
+            UpdateHighscore();
+        }
+        _gameData.Points = 0;
+    }
+
+    private void UpdateHighscore()
+    {
+        _gameData.Highscore = _gameData.Points;
     }
 
     private void EndOfSession()

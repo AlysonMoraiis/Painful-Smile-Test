@@ -3,19 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private PoolData _explosionEffect;
-    
-    private void OnCollisionEnter2D(Collision2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
             DisableGameObject();
             return;
         }
-
-        OnBulletExplosion();
+        
+        if (other.CompareTag("Player"))
+        {
+            OnBulletExplosion();
+        }
     }
 
     public void OnBulletExplosion()
