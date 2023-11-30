@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : HealthController
@@ -13,8 +11,6 @@ public class PlayerHealth : HealthController
         {
             TakeDamage(_enemyData.ChaserDamage);
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

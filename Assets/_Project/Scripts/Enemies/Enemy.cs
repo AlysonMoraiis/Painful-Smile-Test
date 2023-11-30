@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private EnemyData _enemyData;
-    [SerializeField] private NavMeshAgent _agent;
+    [Header("Alterables")]
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _rotationSpeed;
+    
+    [Header("Others")]
+    [SerializeField] private EnemyData _enemyData;
+    [SerializeField] private NavMeshAgent _agent;
     
     private void Start()
     {

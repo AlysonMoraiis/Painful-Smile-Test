@@ -1,13 +1,13 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShooterCannon : MonoBehaviour
 {
+    [Header("Alterables")]
     [SerializeField] private float _fireForce;
     [SerializeField] private float _fireRate;
-    [SerializeField] private Transform _thisTransform;
+    
+    [Header("Others")]
     [SerializeField] private Transform _frontCannon;
     [SerializeField] private PoolData _bulletPool;
     

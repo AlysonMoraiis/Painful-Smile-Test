@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8976846416352704063}
   - component: {fileID: 6447596438794792069}
-  - component: {fileID: 4964859766001939090}
   - component: {fileID: -2745961956116530015}
   - component: {fileID: 1725238803001782921}
-  - component: {fileID: 7910565709923501288}
+  - component: {fileID: 4964859766001939090}
   m_Layer: 11
   m_Name: EnemyCannonBall
   m_TagString: EnemyBullet
@@ -88,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4964859766001939090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6269829837680419062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f9babac02f13642a725de5b5c56546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _explosionEffect: {fileID: 11400000, guid: 33884cdd95b667041963cdcdb21e05e4, type: 2}
 --- !u!50 &-2745961956116530015
 Rigidbody2D:
   serializedVersion: 4
@@ -163,24 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.050000012
---- !u!95 &7910565709923501288
-Animator:
-  serializedVersion: 5
+--- !u!114 &4964859766001939090
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6269829837680419062}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5edd9d663025cb14ebb63798db2dd7cd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f9babac02f13642a725de5b5c56546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionEffect: {fileID: 11400000, guid: 33884cdd95b667041963cdcdb21e05e4, type: 2}
