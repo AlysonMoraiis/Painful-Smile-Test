@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Game Data
   m_EditorClassIdentifier: 
   SessionTime: 180
-  EnemySpawnTime: 10
+  EnemySpawnTime: 5
   Points: 30
   PlayerDamage: 1
   ChaserDamage: 3
