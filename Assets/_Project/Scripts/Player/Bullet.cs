@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
     public void OnBulletExplosion()
     {
-        PoolManager.Instance.SpawnFromPool(_poolData.tag, transform.position, transform.rotation);
+        PoolManager.Instance.SpawnFromPool(_poolData.Tag, transform.position, transform.rotation);
         DisableGameObject();
     }
 

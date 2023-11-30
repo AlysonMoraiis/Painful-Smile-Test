@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnChaserEnemy()
     {
         Vector3 localToSpawn = GetRandomCornerPosition();   
-        PoolManager.Instance.SpawnFromPool(_poolData.tag, localToSpawn, Quaternion.identity);
+        PoolManager.Instance.SpawnFromPool(_poolData.Tag, localToSpawn, Quaternion.identity);
     }
     
     private void SpawnShooterEnemy()
@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
             edgePosition = new Vector3(Random.Range(0f, Screen.width), 0f, 0f);
         }
 
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(edgePosition);
+        Vector3 worldPosition = _camera.ScreenToWorldPoint(edgePosition);
         worldPosition.z = 0f;
 
         return worldPosition;

@@ -17,11 +17,12 @@ public class HealthController : MonoBehaviour
 
     private int _health;
 
-    private void Awake()
+    private void OnEnable()
     {
         _health = _maxHealth;
+        SetShipState(0);
     }
-
+    
     protected void TakeDamage(int value)
     {
         _health -= value;
@@ -48,7 +49,7 @@ public class HealthController : MonoBehaviour
     
     protected virtual void DestroyShip()
     {
-        PoolManager.Instance.SpawnFromPool(_poolData.tag, transform.position, transform.rotation);
-        Destroy(gameObject);
+        PoolManager.Instance.SpawnFromPool(_poolData.Tag, transform.position, transform.rotation);
+        gameObject.SetActive(false);
     }
 }

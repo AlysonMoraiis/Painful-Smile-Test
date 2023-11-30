@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751d41863da33cd40afa7df8b04e4a8f, type: 3}
   m_Name: ChaserEnemy
   m_EditorClassIdentifier: 
-  tag: ChaserEnemy
-  prefab: {fileID: 304719722351135630, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
-  size: 10
+  _tag: ChaserEnemy
+  _prefab: {fileID: 304719722351135630, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
+  _size: 2

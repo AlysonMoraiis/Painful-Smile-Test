@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751d41863da33cd40afa7df8b04e4a8f, type: 3}
   m_Name: Bullet
   m_EditorClassIdentifier: 
-  tag: Bullet
-  prefab: {fileID: 6269829837680419062, guid: 1b1340acc77ae8046932c0f8d875cf9e, type: 3}
-  size: 20
+  _tag: Bullet
+  _prefab: {fileID: 6269829837680419062, guid: 1b1340acc77ae8046932c0f8d875cf9e, type: 3}
+  _size: 20

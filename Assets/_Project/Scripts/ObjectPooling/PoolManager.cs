@@ -28,14 +28,14 @@ public class PoolManager : MonoBehaviour
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
-            for (int i = 0; i < pool.size; i++)
+            for (int i = 0; i < pool.Size; i++)
             {
-                GameObject obj = Instantiate(pool.prefab, this.gameObject.transform, true);
+                GameObject obj = Instantiate(pool.Prefab, this.gameObject.transform, true);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
 
-            _poolDictionary.Add(pool.tag, objectPool);
+            _poolDictionary.Add(pool.Tag, objectPool);
         }
     }
 

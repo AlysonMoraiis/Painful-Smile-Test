@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ChaserEnemyHealth : HealthController
 {
+    private int test = 1;
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Bullet"))
@@ -14,8 +15,8 @@ public class ChaserEnemyHealth : HealthController
 
         if (other.gameObject.CompareTag("Player"))
         {
-            PoolManager.Instance.SpawnFromPool(_poolData.tag, transform.position, transform.rotation);
-            Destroy(gameObject);
+            PoolManager.Instance.SpawnFromPool(_poolData.Tag, transform.position, transform.rotation);
+            gameObject.SetActive(false);
         }
     }
 }
