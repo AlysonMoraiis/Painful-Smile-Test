@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e23faef96963545817b4a4a5a7c6d7, type: 3}
-  m_Name: Game Data
+  m_Script: {fileID: 11500000, guid: 751d41863da33cd40afa7df8b04e4a8f, type: 3}
+  m_Name: ChaserEnemy
   m_EditorClassIdentifier: 
-  SessionTime: 180
-  EnemySpawnTime: 0.2
-  Points: 30
-  PlayerDamage: 1
-  ChaserDamage: 3
-  ShooterDamage: 1
+  tag: ChaserEnemy
+  prefab: {fileID: 304719722351135630, guid: 506d7ece45c0b3c40b5d2f20b8841af7, type: 3}
+  size: 10

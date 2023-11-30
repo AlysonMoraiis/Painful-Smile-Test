@@ -14,7 +14,7 @@ public class ChaserEnemyHealth : HealthController
 
         if (other.gameObject.CompareTag("Player"))
         {
-            PoolManager.Instance.SpawnFromPool("ExplosionEffect", transform.position, transform.rotation);
+            PoolManager.Instance.SpawnFromPool(_poolData.tag, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

@@ -13,6 +13,8 @@ public class HealthController : MonoBehaviour
     [Header("Others")] 
     [SerializeField] protected GameData _gameData;
 
+    [SerializeField] protected PoolData _poolData;
+
     private int _health;
 
     private void Awake()
@@ -46,7 +48,7 @@ public class HealthController : MonoBehaviour
     
     protected virtual void DestroyShip()
     {
-        PoolManager.Instance.SpawnFromPool("ExplosionEffect", transform.position, transform.rotation);
+        PoolManager.Instance.SpawnFromPool(_poolData.tag, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

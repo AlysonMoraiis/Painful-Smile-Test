@@ -6,7 +6,7 @@ using UnityEngine;
 public class PoolManager : MonoBehaviour
 {
     [SerializeField] private Dictionary<string, Queue<GameObject>> _poolDictionary;
-    [SerializeField] private List<Pool> pools;
+    [SerializeField] private List<PoolData> _pools;
 
     public static PoolManager Instance;
 
@@ -24,7 +24,7 @@ public class PoolManager : MonoBehaviour
     {
         _poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (var pool in pools)
+        foreach (var pool in _pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
@@ -43,7 +43,6 @@ public class PoolManager : MonoBehaviour
     {
         if (!_poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning(tag + " doesn't exist");
             return null;
         }
         

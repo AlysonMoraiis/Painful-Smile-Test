@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private PoolData _poolData;
     
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -21,7 +22,7 @@ public class Bullet : MonoBehaviour
 
     public void OnBulletExplosion()
     {
-        PoolManager.Instance.SpawnFromPool("ExplosionEffect", transform.position, transform.rotation);
+        PoolManager.Instance.SpawnFromPool(_poolData.tag, transform.position, transform.rotation);
         DisableGameObject();
     }
 
